@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="container">
+        <h2>คำนวณหาค่า BMI</h2>
+
+        <input id="weight" placeholder="น้ำหนัก (กิโลกรัม)">
+        <br><br>
+
+        <input id="height" placeholder="ส่วนสูง (เซนติเมตร)">
+        <br><br>
+
+        <button onclick="calculateBMI()">คำนวณ</button><br><br>
+
+    <div id="result"></div>
+    <script>
+    function calculateBMI() {
+
+        let w_Kg = parseFloat(document.getElementById("weight").value);
+        let h_Cm = parseFloat(document.getElementById("height").value);
+
+        if (isNaN(w_Kg) || isNaN(h_Cm)) {document.getElementById("result").innerHTML = "⚠️ กรุณากรอกข้อมูลให้ครบ";return;}
+            else if (w_Kg <= 0 || h_Cm <= 0) {document.getElementById("result").innerHTML = "⚠️ กรุณากรอกข้อมูลให้ถูกต้อง";return;}
+        
+        let h_M = h_Cm / 100;
+
+        let bmi = w_Kg / (h_M * h_M);
+        let status = "";
+
+        
+        if (bmi < 18.5) {status = "ผอม";}
+            else if (bmi <= 22.9) {status = "ปกติ";}
+            else if (bmi <= 24.9) {status = "น้ำหนักเกิน";}
+            else {status = "อ้วน";}
+
+    
+        document.getElementById("result").innerHTML =
+            "🐸 ค่า BMI ของคุณคือ   " + bmi.toFixed(2) + "<br>🐸 ผลการประเมินของคุณคือ  " + status;}
+    </script>
+</body>
+</html>

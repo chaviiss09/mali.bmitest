@@ -25,8 +25,8 @@
         let w_Kg = parseFloat(document.getElementById("weight").value);
         let h_Cm = parseFloat(document.getElementById("height").value);
 
-        if (isNaN(w_Kg) || isNaN(h_Cm)) {document.getElementById("result").innerHTML = "⚠️ กรุณากรอกข้อมูลให้ครบ";return;}
-            else if (w_Kg <= 0 || h_Cm <= 0) {document.getElementById("result").innerHTML = "⚠️ กรุณากรอกข้อมูลให้ถูกต้อง";return;}
+        if (isNaN(w_Kg) || isNaN(h_Cm)) {document.getElementById("result").innerHTML = "⚠️ กรุณากรอกข้อมูลให้ครบ!!";return;}
+            else if (w_Kg <= 0 || h_Cm <= 0) {document.getElementById("result").innerHTML = "⚠️ กรุณากรอกข้อมูลให้ถูกต้อง!";return;}
         
         let h_M = h_Cm / 100;
 
